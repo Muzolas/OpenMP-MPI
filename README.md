@@ -2,6 +2,9 @@
 
 Bu proje, OpenMP ve MPI kullanarak dağıtık bir sistemde veri işleme uygulamasını gerçekleştirir. Docker konteynerları kullanılarak master ve worker düğümleri oluşturulur.
 
+## Proje Anlatım Videosu
+https://drive.google.com/file/d/10jOOZaycoI4cUhFwog_3t6BLgP-QjsDD/view?usp=sharing
+
 ## 🚀 Özellikler
 
 - Docker konteynerları ile izole edilmiş çalışma ortamı
