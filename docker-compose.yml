@@ -1,0 +1,51 @@
+# MPI ve OpenMP için Docker Compose yapılandırması
+# Bu dosya, dağıtık sistem için gerekli tüm düğümleri tanımlar
+
+version: '3.8'
+
+# Özel ağ tanımı
+networks:
+  mpi_network:
+    driver: bridge
+
+# Servis tanımları
+services:
+  # Master düğüm
+  master:
+    build: .
+    container_name: mpi_master
+    hostname: master
+    networks:
+      - mpi_network
+    volumes:
+      - .:/mpi_workspace
+
+  # Worker düğüm 1
+  worker1:
+    build: .
+    container_name: mpi_worker1
+    hostname: worker1
+    networks:
+      - mpi_network
+    volumes:
+      - .:/mpi_workspace
+
+  # Worker düğüm 2
+  worker2:
+    build: .
+    container_name: mpi_worker2
+    hostname: worker2
+    networks:
+      - mpi_network
+    volumes:
+      - .:/mpi_workspace
+
+  # Worker düğüm 3
+  worker3:
+    build: .
+    container_name: mpi_worker3
+    hostname: worker3
+    networks:
+      - mpi_network
+    volumes:
+      - .:/mpi_workspace 
